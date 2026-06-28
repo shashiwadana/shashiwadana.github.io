@@ -379,7 +379,6 @@ body.offcanvas {
   padding: 0; }
 
 .colorlib-experience,
-.colorlib-skills,
 .colorlib-education,
 .colorlib-blog,
 .colorlib-work,
@@ -393,7 +392,6 @@ body.offcanvas {
   display: block; }
   @media screen and (max-width: 768px) {
     .colorlib-experience,
-    .colorlib-skills,
     .colorlib-education,
     .colorlib-blog,
     .colorlib-work,
