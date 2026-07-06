@@ -380,24 +380,28 @@ body.offcanvas {
 
 .colorlib-experience,
 .colorlib-education,
+.colorlib-publications,
+.colorlib-awards,
 .colorlib-blog,
 .colorlib-work,
 .colorlib-about,
 .colorlib-contact {
-  padding-top: 3em;
-  padding-bottom: 5em;
+  padding-top: 1em;
+  padding-bottom: 1em;
   clear: both;
   width: 100%;
   display: block; }
   @media screen and (max-width: 768px) {
     .colorlib-experience,
     .colorlib-education,
+    .colorlib-publications,
+    .colorlib-awards,
     .colorlib-blog,
     .colorlib-work,
     .colorlib-about,
     .colorlib-contact {
-      padding-top: 3em;
-      padding-bottom: 4.5em; } }
+      padding-top: 1em;
+      padding-bottom: 1em; } }
 
 .author-img {
   background-size: cover;
