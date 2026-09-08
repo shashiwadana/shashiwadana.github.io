@@ -1810,3 +1810,100 @@ body.offcanvas {
   }
 
 }
+
+/* =======================================================
+   LEFT SIDEBAR — SIMPLE FIT FIX
+   No font-size changes. Only scrollbar and vertical spacing.
+======================================================= */
+
+#colorlib-aside {
+  height: 100vh !important;
+  height: 100dvh !important;
+  overflow-y: hidden !important;
+  overflow-x: hidden !important;
+  padding-top: 12px !important;
+  padding-bottom: 10px !important;
+  box-sizing: border-box;
+}
+
+/* Remove unnecessary space around the profile image */
+#colorlib-aside .author-img {
+  margin-bottom: 12px !important;
+}
+
+/* Remove excess vertical gaps between navigation items */
+#colorlib-aside #colorlib-main-menu {
+  margin: 0 !important;
+}
+
+#colorlib-aside #colorlib-main-menu ul {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+#colorlib-aside #colorlib-main-menu ul li {
+  margin-bottom: 3px !important;
+}
+
+#colorlib-aside #colorlib-main-menu ul li a {
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+}
+
+/* Keep the underline aligned with the tighter links */
+#colorlib-aside #colorlib-main-menu ul li a:after {
+  bottom: 2px !important;
+}
+
+/* Remove unnecessary footer spacing */
+#colorlib-aside .colorlib-footer {
+  padding: 8px 12px 0 !important;
+  margin: 0 !important;
+}
+
+#colorlib-aside .colorlib-footer p {
+  margin-bottom: 4px !important;
+}
+
+#colorlib-aside .colorlib-footer ul {
+  margin: 0 !important;
+}
+
+/* Mobile: remove the template's large 4em top gap */
+@media screen and (max-width: 768px) {
+  #colorlib-aside {
+    padding-top: 12px !important;
+    padding-bottom: 10px !important;
+  }
+
+  #colorlib-aside #colorlib-main-menu ul {
+    margin-bottom: 0 !important;
+  }
+}
+
+/* =======================================================
+   SIDEBAR VERTICAL ALIGNMENT
+   Keep existing sizes; simply center the image + navigation
+   vertically while leaving the footer at the bottom.
+======================================================= */
+
+#colorlib-aside {
+  display: flex !important;
+  flex-direction: column;
+}
+
+/* Push the profile/navigation group away from the very top */
+#colorlib-aside > .text-center {
+  margin-top: auto;
+}
+
+/* Keep the navigation directly below the profile image */
+#colorlib-aside #colorlib-main-menu {
+  flex-shrink: 0;
+}
+
+/* Keep footer at the bottom; the two auto margins balance the layout */
+#colorlib-aside .colorlib-footer {
+  margin-top: auto !important;
+}
+
