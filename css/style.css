@@ -394,6 +394,7 @@ body.offcanvas {
   padding: 0; }
 
 .colorlib-experience,
+.colorlib-research,
 .colorlib-education,
 .colorlib-publications,
 .colorlib-awards,
@@ -409,6 +410,7 @@ body.offcanvas {
   display: block; }
   @media screen and (max-width: 768px) {
     .colorlib-experience,
+    .colorlib-research,
     .colorlib-education,
     .colorlib-publications,
     .colorlib-awards,
@@ -1609,3 +1611,73 @@ body.offcanvas {
     white-space: normal;
   }
 }
+
+/* ---------- Research Section ---------- */
+/*
+   Research intentionally reuses the existing .experience-list,
+   .experience-item, .experience-top, .experience-place,
+   .experience-date and .experience-details styles so it matches
+   the rest of the website exactly.
+*/
+
+.research-link {
+  margin-top: 10px;
+  margin-bottom: 0 !important;
+}
+
+@media screen and (max-width: 768px) {
+  .research-link {
+    margin-top: 8px;
+  }
+}
+
+/* ---------- Compact Light Link Buttons ---------- */
+/*
+   Minimal inline chips for DOI, arXiv, Publication and Dataset links.
+   Designed to stay subtle and compact within publication/research text.
+*/
+.research-btn {
+  display: inline-block;
+  padding: 1px 6px;
+  margin: 1px 4px 1px 0;
+  font-family: "Quicksand", Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.45;
+  color: #2c98f0 !important;
+  background: #f6f8fa;
+  border: 1px solid #edf0f3;
+  border-radius: 3px;
+  text-decoration: none !important;
+  white-space: nowrap;
+  vertical-align: baseline;
+  -webkit-transition: 0.15s ease;
+  -o-transition: 0.15s ease;
+  transition: 0.15s ease;
+}
+
+/* Ensures Research-section links remain just as compact */
+.research-link a.research-btn {
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.research-btn:hover,
+.research-btn:focus,
+.research-btn:active {
+  color: #2c98f0 !important;
+  background: #eef3f7;
+  border-color: #e3e9ee;
+  text-decoration: none !important;
+  outline: none;
+}
+
+@media screen and (max-width: 768px) {
+  .research-btn,
+  .research-link a.research-btn {
+    font-size: 10px;
+    padding: 1px 5px;
+    margin-right: 3px;
+  }
+}
+
