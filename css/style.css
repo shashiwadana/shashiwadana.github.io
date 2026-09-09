@@ -1904,6 +1904,8 @@ body.offcanvas {
 
 /* Keep footer at the bottom; the two auto margins balance the layout */
 #colorlib-aside .colorlib-footer {
-  margin-top: auto !important;
+  position: static !important;
+  float: none !important;
+  width: 100%;
+  text-align: center;
 }
-
