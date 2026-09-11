@@ -47,3 +47,68 @@ filters.forEach(button => {
     });
   });
 });
+
+const testimonialTrack = document.querySelector(".testimonial-track");
+const testimonialSlides = document.querySelectorAll(".testimonial-slide");
+const testimonialDots = document.querySelectorAll(".testimonial-dot");
+
+const testimonialPrev = document.querySelector(".testimonial-prev");
+const testimonialNext = document.querySelector(".testimonial-next");
+
+let testimonialIndex = 0;
+
+function getTestimonialsPerView() {
+  return window.innerWidth <= 760 ? 1 : 2;
+}
+
+function showTestimonial(index) {
+  if (!testimonialTrack || testimonialSlides.length === 0) return;
+
+  const perView = getTestimonialsPerView();
+  const maxIndex = Math.max(0, testimonialSlides.length - perView);
+
+  if (index < 0) {
+    index = maxIndex;
+  }
+
+  if (index > maxIndex) {
+    index = 0;
+  }
+
+  testimonialIndex = index;
+
+  const slideWidth = testimonialSlides[0].offsetWidth;
+  const gap = window.innerWidth <= 760 ? 0 : 14;
+
+  testimonialTrack.style.transform =
+    `translateX(-${testimonialIndex * (slideWidth + gap)}px)`;
+
+  testimonialDots.forEach((dot, dotIndex) => {
+    dot.classList.toggle(
+      "active",
+      dotIndex === testimonialIndex
+    );
+  });
+}
+
+if (testimonialPrev) {
+  testimonialPrev.addEventListener("click", () => {
+    showTestimonial(testimonialIndex - 1);
+  });
+}
+
+if (testimonialNext) {
+  testimonialNext.addEventListener("click", () => {
+    showTestimonial(testimonialIndex + 1);
+  });
+}
+
+testimonialDots.forEach((dot) => {
+  dot.addEventListener("click", () => {
+    showTestimonial(Number(dot.dataset.slide));
+  });
+});
+
+window.addEventListener("resize", () => {
+  showTestimonial(0);
+});
