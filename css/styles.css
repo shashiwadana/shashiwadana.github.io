@@ -671,3 +671,14 @@ select,
 a {
   color: var(--accent);
 }
+
+
+.service-list {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.service-list li {
+  margin-bottom: 14px;
+  line-height: 1.8;
+}
