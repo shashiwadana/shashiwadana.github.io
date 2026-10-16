@@ -247,11 +247,19 @@ strong { font-weight: 650; }
   gap: 14px;
 }
 
+
+
 .cert-viewport {
   flex: 1;
   min-width: 0;
   overflow: hidden;
+  padding: 4px 0 8px;
 }
+
+.cert-dots {
+  margin-top: 4px;
+}
+
 
 .cert-grid {
   display: flex;
@@ -285,7 +293,7 @@ strong { font-weight: 650; }
   border: 1px solid var(--line);
   border-radius: 10px;
   text-decoration: none;
-  box-shadow: var(--shadow);
+   box-shadow: none;
   transition: transform .18s ease, border-color .18s ease;
 }
 .cert-card:hover { transform: translateY(-3px); border-color: #c6cec7; }
