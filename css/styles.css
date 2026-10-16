@@ -238,7 +238,43 @@ strong { font-weight: 650; }
 }
 .card-links a:hover { background: var(--accent-soft); border-color: #cbd5e1; }
 
-.cert-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+
+/* Certification Carousel */
+
+.cert-carousel {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.cert-viewport {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.cert-grid {
+  display: flex;
+  gap: 10px;
+  transition: transform 0.45s ease;
+  will-change: transform;
+}
+
+.cert-grid .cert-card {
+  flex: 0 0 calc((100% - 20px) / 3);
+  min-width: 0;
+}
+
+@media (max-width: 760px) {
+  .cert-carousel {
+    gap: 6px;
+  }
+
+  .cert-grid .cert-card {
+    flex-basis: 100%;
+  }
+}
+
 .cert-card {
   display: flex;
   flex-direction: column;
@@ -672,13 +708,3 @@ a {
   color: var(--accent);
 }
 
-
-.service-list {
-  margin: 0;
-  padding-left: 22px;
-}
-
-.service-list li {
-  margin-bottom: 14px;
-  line-height: 1.8;
-}

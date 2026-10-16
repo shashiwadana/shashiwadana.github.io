@@ -112,3 +112,69 @@ testimonialDots.forEach((dot) => {
 window.addEventListener("resize", () => {
   showTestimonial(0);
 });
+
+/* Certification Carousel */
+
+const certTrack = document.querySelector(".cert-grid");
+const certCards = document.querySelectorAll(".cert-card");
+const certPrev = document.querySelector(".cert-prev");
+const certNext = document.querySelector(".cert-next");
+const certDots = document.querySelector(".cert-dots");
+
+let certPage = 0;
+
+function getCertsPerView() {
+  return window.innerWidth <= 760 ? 1 : 3;
+}
+
+function showCertPage(index) {
+  if (!certTrack || certCards.length === 0) return;
+
+  const perView = getCertsPerView();
+  const totalPages = Math.ceil(certCards.length / perView);
+
+  certPage = (index + totalPages) % totalPages;
+
+  const cardWidth = certCards[0].getBoundingClientRect().width;
+  const gap = 10;
+
+  certTrack.style.transform =
+    `translateX(-${certPage * perView * (cardWidth + gap)}px)`;
+
+  // Generate navigation dots
+  certDots.replaceChildren();
+
+  for (let i = 0; i < totalPages; i++) {
+    const dot = document.createElement("button");
+
+    dot.type = "button";
+    dot.className = "testimonial-dot cert-dot";
+    dot.setAttribute("aria-label", `Show certification page ${i + 1}`);
+
+    if (i === certPage) {
+      dot.classList.add("active");
+    }
+
+    dot.addEventListener("click", () => {
+      showCertPage(i);
+    });
+
+    certDots.appendChild(dot);
+  }
+}
+
+if (certPrev && certNext) {
+  certPrev.addEventListener("click", () => {
+    showCertPage(certPage - 1);
+  });
+
+  certNext.addEventListener("click", () => {
+    showCertPage(certPage + 1);
+  });
+
+  window.addEventListener("resize", () => {
+    showCertPage(0);
+  });
+
+  showCertPage(0);
+}
