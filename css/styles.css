@@ -341,7 +341,7 @@ strong { font-weight: 650; }
 
   padding: 30px 34px;
 
-  box-shadow: var(--shadow);
+  box-shadow: none;
 
   display: flex;
   flex-direction: column;
